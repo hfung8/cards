@@ -86,7 +86,7 @@ footer {
 
 span {
   /* background-color: yellow; */
-  content: attr(data-value);
+  /* content: attr(data-value); */
   background: radial-gradient(beige 75%, bisque)
 }
 
@@ -100,4 +100,8 @@ span {
   margin-left: 120px;
   position: relative; 
   top: 155px; 
+}
+
+.red {
+  color: red; 
 }

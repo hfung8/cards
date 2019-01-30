@@ -75,13 +75,17 @@ function render() {
   //  create a for loop to set the value and color attributes to the hand
   var arrayOfHandValue = [];
   var arrayOfSuitValue = [];
+  var arrayOfColorValue = [];
   for (var j = 0; j < playDeck.length; j++) {
     var handValue = playDeck[j].value;
     var suitValue = playDeck[j].suit;
+    var colorValue = playDeck[j].color;
     arrayOfSuitValue.push(suitValue);
     arrayOfHandValue.push(handValue);
+    arrayOfColorValue.push(colorValue);
   };
-  //console.log("arrayOfHandValue", arrayOfHandValue);
+  console.log("arrayOfColorValue", arrayOfColorValue);
+  console.log("arrayOfHandValue", arrayOfHandValue);
   // for each numspan set the attribute of data value to arrayOfHandValue
   for ( var a = 0; a < arrayOfHandValue.length; a++) {
     var span = document.createElement("span");
@@ -89,9 +93,6 @@ function render() {
     span.innerHTML = arrayOfHandValue[a];
     span.setAttribute("class", "cards");
   };
-  // for each span set the color value
-  
-
   // create a separate value for the suit value and set it to an innerHTML for the span tag
   for ( var p = 0; p < arrayOfSuitValue.length; p++) {
     var span = document.createElement("span");
@@ -100,9 +101,28 @@ function render() {
   }
   console.log(suitSpans[0]);
   console.log(numSpans)
-  // numSpans.forEach(function(item){
-  //   console.log(item);
-  // })
+
+  // for each span set the color value
+  var colorOne = arrayOfColorValue[0];
+  var colorTwo = arrayOfColorValue[1];
+  var colorThree = arrayOfColorValue[2];
+  var colorFour = arrayOfColorValue[3];
+  var colorFive = arrayOfColorValue[4];
+  var colorSix = arrayOfColorValue[5];
+  var colorSeven= arrayOfColorValue[6];
+
+  suitSpans[0].setAttribute("class", colorOne); 
+  suitSpans[1].setAttribute("class", colorTwo);
+  suitSpans[2].setAttribute("class", colorThree);
+  suitSpans[3].setAttribute("class", colorFour);
+  suitSpans[4].setAttribute("class", colorFive);
+  suitSpans[5].setAttribute("class", colorSix);
+  suitSpans[6].setAttribute("class", colorSeven);
+
+  suitSpans.forEach(function(item) {
+    console.log("item", item);
+  });
+  console.log("NumSpans", numSpans);
   // numSpans has the spans with the data-value attribute set to the value of the hand
   for ( var x = 0; x < numSpans.length; x++) {
     var section = document.createElement("section");
@@ -110,7 +130,6 @@ function render() {
     sectArray.push(section);
   }
   // sectArray has the array of sections
-  // console.log("SectArray", sectArray);
   // append sectArray to a div in the document body
 var div= document.createElement("div");
 var value = document.createElement("div");
@@ -123,7 +142,6 @@ for ( var i = 0; i < 7; i++) {
 }
 console.log(suitAndValue);
 
-// var suitAndValue = suitSpans.concat(sectArray);
   var firstSuitValue = suitAndValue[0];
   var secondSuitValue = suitAndValue[1];
   var thirdSuitValue = suitAndValue[2];
